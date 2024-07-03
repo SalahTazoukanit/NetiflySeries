@@ -18,9 +18,10 @@ const Navigation = () => {
             Coup de coeur
           </NavLink>
         </div>
-        <div className="flex ">
-          <h1 className="text-5xl ml-60 mt-10">Netifly Series</h1>
+        <div className="flex justify-center ">
+          <h1 className="text-5xl mt-10">Netifly Series</h1>
         </div>
+        <div></div>
       </div>
     </>
   );
