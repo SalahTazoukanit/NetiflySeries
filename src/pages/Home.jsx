@@ -6,9 +6,9 @@ import SearchBar from "../components/SearchBar";
 
 const Home = () => {
   const [films, setFilms] = useState([]);
-  const [inputValue, setInputValue] = useState("code");
-  if (inputValue == "") {
-    inputValue == "code";
+  const [inputValue, setInputValue] = useState("");
+  if (inputValue === "") {
+    setInputValue("code");
   }
   const [genres, setGenres] = useState({
     genres: [
@@ -65,7 +65,6 @@ const Home = () => {
         `https://api.themoviedb.org/3/search/movie?api_key=0112ce92ce31af44c09acb9c735c4e87&query=${inputValue}&language=fr-FR`
       )
       .then((response) => {
-        console.log(response.data.results);
         setFilms(response.data.results);
       });
   };
@@ -77,11 +76,13 @@ const Home = () => {
     <>
       <Navigation />
       <SearchBar setInputValue={setInputValue} />
-      <div className="card-container flex flex-wrap items-center mt-10 justify-center gap-10">
+      <div className="card-container flex flex-wrap items-center mt-10 justify-center gap-20">
         {films &&
-          films.map((film) => (
-            <FilmCard key={film.id} film={film} setGenre={setGenre} />
-          ))}
+          films
+            .slice(0, 12)
+            .map((film) => (
+              <FilmCard key={film.id} film={film} setGenre={setGenre} />
+            ))}
       </div>
     </>
   );

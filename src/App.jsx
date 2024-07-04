@@ -8,8 +8,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" Component={Home}></Route>
-          <Route path="/saved" Component={Saved}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/saved" element={<Saved />}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -15,7 +15,7 @@ const Navigation = () => {
             className={(nav) => (nav.isActive ? "nav-active" : "")}
             to={"/saved"}
           >
-            Coup de coeur
+            Coups de coeur
           </NavLink>
         </div>
         <div className="flex justify-center ">
